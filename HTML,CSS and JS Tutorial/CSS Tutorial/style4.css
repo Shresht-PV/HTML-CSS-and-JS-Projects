@@ -1,0 +1,12 @@
+p{
+    text-align : end;
+}
+
+h1{
+    text-align : center;
+    text-decoration: blue dotted underline;
+}
+
+a {
+    text-decoration: none;
+}

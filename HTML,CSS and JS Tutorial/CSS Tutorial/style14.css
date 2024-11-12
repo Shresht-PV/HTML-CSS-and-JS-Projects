@@ -1,0 +1,17 @@
+div{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    /* border-width: 2px;
+    border-style: solid;
+    border-color: brown; */
+    border: 2px solid brown;
+    text-align: right;
+}
+
+div{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    border: 2px solid brown;
+}

@@ -1,0 +1,15 @@
+p{
+    text-align : center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#one{
+    font-family: Arial;
+}
+
+#two{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
