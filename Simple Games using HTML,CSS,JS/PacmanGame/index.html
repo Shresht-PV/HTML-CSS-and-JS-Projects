@@ -1,0 +1,31 @@
+<!-- index.html -->
+<!-- This file contains the structure for the game. -->
+<!-- HTML structure with power-up and level display. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacman Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Pacman Game</h1>
+  <div class="score-board">
+    <p>Score: <span id="score">0</span></p>
+    <p>High Score: <span id="highScore">0</span></p>
+    <p>Level: <span id="level">1</span></p>
+  </div>
+  <div class="game-container" id="gameContainer">
+    <div id="pacman"></div>
+    <div id="ghost"></div>
+    <div id="powerUp" style="top: 200px; left: 200px;"></div>
+    <div class="dot" style="top: 50px; left: 50px;"></div>
+    <div class="dot" style="top: 150px; left: 100px;"></div>
+    <div class="dot" style="top: 200px; left: 250px;"></div>
+    <div class="dot" style="top: 300px; left: 350px;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

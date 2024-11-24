@@ -1,0 +1,35 @@
+<!-- index.html -->
+<!-- This is the main file for the game interface. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Guess the Number</h1>
+    <p class="instructions">Select difficulty and guess a number between 1 and 100!</p>
+    <div class="controls">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy (60s)</option>
+        <option value="medium">Medium (30s)</option>
+        <option value="hard">Hard (15s)</option>
+      </select>
+    </div>
+    <div class="stats">
+      <p>Time Left: <span id="timer">60</span>s</p>
+      <p>Score: <span id="score">0</span></p>
+    </div>
+    <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100">
+    <button id="submitGuess">Submit</button>
+    <p id="feedback"></p>
+    <button id="resetGame">Reset Game</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

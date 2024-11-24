@@ -1,0 +1,70 @@
+/* style.css */
+/* This file contains the styles for the game interface. */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.game-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: #4facfe;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #4facfe;
+  border-radius: 5px;
+  width: 80%;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  background: #4facfe;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #00f2fe;
+}
+
+#feedback {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+input, select {
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #4facfe;
+  border-radius: 5px;
+  width: 80%;
+  font-size: 16px;
+}
+
+.controls, .stats {
+  margin-bottom: 15px;
+}
+
+.stats p {
+  font-size: 16px;
+  margin: 5px 0;
+}
