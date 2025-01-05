@@ -1,0 +1,57 @@
+div {
+    height: 100px;
+    width: 100px;
+    background-color: aquamarine;
+    border: 2px solid black;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    animation: colorAnimate 4s ease-in 1s infinite normal;
+    /* animation: colorAnimate 2s ease-in 1s infinite normal; */
+    /* animation: colorAnimate 2s ease-in 0s infinite normal; */
+    /* animation-name: colorAnimate; */
+    /* animation-duration: 2s; */
+    /* animation-delay: 0s; */
+    /* animation-iteration-count: infinite; */
+    /* animation-direction: alternate; */
+    /* animation-direction: reverse; */
+    /* animation-direction: normal; */
+    /* border-radius: 50%; */
+    /* animation-timing-function: ease-in; */
+    /* animation-duration: 0.25s; */
+    /* animation-iteration-count: 5; */
+    /* animation-duration: 1s; */
+    /* animation-delay: 1s; */
+}
+
+/* @keyframes colorAnimate {
+    from { background-color: aquamarine;}
+    to {background-color: red;}
+} */
+
+/* @keyframes colorAnimate {
+    from {
+        left: 0px;
+        background-color: yellow;
+    }
+    to {
+        left: 200px;
+        background-color: red;
+        color: white;
+    }
+} */
+
+@keyframes colorAnimate {
+    0% {
+        left: 0px;
+        background-color: yellow;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        left: 200px;
+        background-color: red;
+        color: white;
+    }
+}

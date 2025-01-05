@@ -1,0 +1,83 @@
+body {
+    text-align: center;
+}
+
+div {
+    height: 100px;
+    width: 50px;
+    display: inline-block;
+    border: 2px solid black;
+    /* width: 200px; */
+    /* width: 500px; */
+    /* height: 50px; */
+    /* height: 20px; */
+    /* width: 50px; */
+    /* width: 150px; */
+}
+
+#container {
+    width: 700px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    /* width: 800px; */
+    /* width: 600px; */
+    /* flex-wrap: wrap; */
+    /* height: 300px; */
+    /* height: 600px; */
+    /* align-content: flex-start; */
+    /* align-items: flex-start; */
+    /* align-items: center; */
+    /* align-content: flex-end; */
+    /* align-content: flex-start; */
+    /* align-content: center; */
+    /* flex-wrap: wrap-reverse; */
+    /* flex-wrap: nowrap; */
+    /* width: 800px; */
+    /* height: 200px; */
+    /* justify-content: flex-start; created for flex-direction:column; */ 
+    /* justify-content: space-between; created for flex-direction:column; */
+    /* justify-content: space-around; created for flex-direction:column; */
+    /* justify-content: center; created for flex-direction:column; */
+    /* justify-content: flex-end; created for flex-direction:column; */
+    /* justify-content: flex-start; created for flex-direction:row;*/
+    /* justify-content: flex-end; created for flex-direction:row; */
+    /* justify-content: center; created for flex-direction:row; */
+    /* height: 300px; */
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+}
+
+#box1 {
+    background-color: aqua;
+    flex-grow: 1;
+}
+ 
+#box2 {
+    background-color: pink;
+    height: 200px;
+    flex-grow: 2;
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+    /* flex-shrink: 0; */
+    /* flex-shrink: 0.5; */
+    /* flex-shrink: 2; */
+    /* align-self: flex-end; */
+}
+
+#box3 {
+    background-color: darkkhaki;
+    height: 75px;
+}
+
+#box4 {
+    background-color: indianred;
+}
+
+#box5 {
+    background-color: slateblue;
+    /* align-self: flex-end; */
+}

@@ -1,0 +1,17 @@
+div {
+    background-color: pink;
+    display: flex;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    background-color: aqua;
+}
+
+li {
+    list-style-type: none;
+    display: inline;
+}

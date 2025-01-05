@@ -1,0 +1,19 @@
+div {
+    width: 100px;
+    height: 100px;
+    margin: 25px;
+    padding: 25px;
+    display: inline-block;
+}
+
+#box1 {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+#box2 {
+    background-color: rgba(0, 0, 255, 0.75);
+}
+
+#box3 {
+    background-color: rgba(0, 0, 255, 1);
+}

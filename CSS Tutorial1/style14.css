@@ -1,0 +1,12 @@
+#box1 {
+    height: 100px;
+    width: 200px;
+    background-color: green;
+}
+
+#box2 {
+    height: 50px;
+    width: 30%;
+    background-color: yellow;
+    margin-left: 10%;
+}
