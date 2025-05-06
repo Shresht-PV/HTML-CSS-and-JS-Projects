@@ -1,0 +1,229 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>captcha? but i want it to be us</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #F5EBD3, #D9B382); 
+            color: #333; 
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.95); 
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+            width: 350px;
+            text-align: center;
+            border: 1px solid #D9B382; 
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #8B4513; 
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #8B4513; 
+            font-weight: 500;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #D9B382; 
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: #F8F8F8; 
+            color: #333; 
+            font-size: 16px;
+        }
+
+        input[type="text"]::placeholder, input[type="password"]::placeholder {
+            color: #888; 
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .captcha-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 30px; 
+            letter-spacing: 5px;  
+            background-color: #E0E0E0; 
+            padding: 10px;  
+            border-radius: 8px;
+            text-decoration: line-through;
+            user-select: none;
+            color: #333;  
+            height: 50px; 
+            width: 75%; 
+            line-height: 1; 
+            flex-grow: 1;
+        }
+
+        .refresh-btn {
+            background-color: #C4A66B; 
+            color: #F5F5F5; 
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 10px; 
+            font-size: 14px; 
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+            height: 50px; 
+            line-height: 1; 
+            flex-basis: 25%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .refresh-btn:hover {
+            background-color: #A08A5D; 
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #8B4513; 
+            color: #F5F5F5;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #6F4F28;
+        }
+
+        .error {
+            color: #D9534F; 
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        .success-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); 
+            color: #F5F5F5;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 36px;
+            z-index: 1000; 
+        }
+
+        .success-overlay h1 {
+            background: linear-gradient(135deg, #F5EBD3, #D9B382); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Login</h1>
+
+    <form id="authForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password">
+
+        <div class="captcha-container">
+            <div class="captcha-box" id="captcha"></div>
+            <button type="button" class="refresh-btn" onclick="refreshCaptcha()">↻</button>
+        </div>
+
+        <label for="captchaInput">Enter CAPTCHA:</label>
+        <input type="text" id="captchaInput" name="captchaInput" placeholder="Enter CAPTCHA">
+
+        <button type="button" onclick="authenticate()">Login</button>
+    </form>
+
+    <div id="result" class="error"></div>
+</div>
+
+<div id="successOverlay" class="success-overlay">
+    <h1><b>Login Successful!<br>Enjoy</b></h1>
+</div>
+
+<script>
+    const storedUsername = "Shresht";
+    const storedPassword = "Shresht1831";
+
+    function generateCaptcha(length = 6) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let captcha = '';
+        for (let i = 0; i < length; i++) {
+            captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return captcha;
+    }
+
+    function refreshCaptcha() {
+        document.getElementById('captcha').textContent = generateCaptcha();
+    }
+
+    function authenticate() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const captchaInput = document.getElementById('captchaInput').value;
+        const captcha = document.getElementById('captcha').textContent;
+
+        if (username !== storedUsername) {
+            document.getElementById('result').textContent = "Incorrect username. Access denied.";
+            return;
+        }
+
+        if (password !== storedPassword) {
+            document.getElementById('result').textContent = "Incorrect password. Access denied.";
+            return;
+        }
+
+        if (captchaInput !== captcha) {
+            document.getElementById('result').textContent = "CAPTCHA does not match. Try again.";
+            return;
+        }
+
+        
+        document.getElementById('successOverlay').style.display = 'flex';
+    }
+
+   
+    refreshCaptcha();
+</script>
+
+</body>
+</html>
